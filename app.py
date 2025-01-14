@@ -1,6 +1,3 @@
-from database import init_db, get_db
-from models import add_student, get_students, update_student, delete_student
-
 def main():
     init_db()  # Initialize database
     print("=== Aplikasi CRUD Mahasiswa ===")
@@ -12,7 +9,7 @@ def main():
         print("4. Hapus Mahasiswa")
         print("5. Keluar")
 
-        choice = input("Pilih menu: ")
+        choice = input("Pilih menu: ").strip()  # Menghapus spasi ekstra
         if choice == "1":
             name = input("Nama: ")
             age = int(input("Umur: "))
@@ -35,7 +32,4 @@ def main():
             print("Keluar dari aplikasi.")
             break
         else:
-            print("Pilihan tidak valid.")
-
-if __name__ == "__main__":
-    main()
+            print("Pilihan tidak valid. Silakan coba lagi.")
